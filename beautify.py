@@ -6,26 +6,67 @@ def beautify_html(filepath):
     with open(filepath, 'r') as f:
         soup = BeautifulSoup(f.read(), 'html.parser')
 
+    # Add Google Fonts and Tailwind config
+    head = soup.find('head')
+    if head:
+        if not head.find('link', href=lambda x: x and 'Inter' in x):
+            new_tags = BeautifulSoup('''
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+                <script>
+                    tailwind.config = {
+                        theme: {
+                            extend: {
+                                fontFamily: {
+                                    sans: ['Inter', 'sans-serif'],
+                                },
+                            },
+                        },
+                    }
+                </script>
+            ''', 'html.parser')
+            for tag in new_tags:
+                head.append(tag)
+
+    # Update body
+    body = soup.find('body')
+    if body:
+        body['class'] = 'bg-slate-50 font-sans flex min-h-screen text-slate-900'
+
     # Update sidebar
     sidebar = soup.find('aside', {'id': 'sidebar'})
     if sidebar:
-        part1_link = sidebar.find('a', href='part1.html')
-        if part1_link and part1_link.parent.name == 'li':
-            part1_li = part1_link.parent
-            part1_li.name = 'li'
-            part1_li.attrs = {'class': 'py-2 px-4 font-bold'}
-            part1_li.string = 'Part I: Computer Fundamentals'
-            if part1_li.a:
-                part1_li.a.unwrap()
+        sidebar['class'] = 'bg-slate-900 text-white w-64 min-h-screen p-4 fixed md:relative transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out z-50'
 
-        part2_link = sidebar.find('a', href='part2.html')
-        if part2_link and part2_link.parent.name == 'li':
-            part2_li = part2_link.parent
-            part2_li.name = 'li'
-            part2_li.attrs = {'class': 'py-2 px-4 font-bold'}
-            part2_li.string = 'Part II: Programming with C/C++'
-            if part2_li.a:
-                part2_li.a.unwrap()
+        # Update headings
+        list_items = sidebar.find_all('li')
+        for li in list_items:
+            if 'font-bold' in li.get('class', []):
+                li['class'] = 'py-2 px-4 font-bold text-slate-400'
+
+        # Add transitions to links
+        links = sidebar.find_all('a')
+        for a in links:
+            a['class'] = a.get('class', []) + ['transition-colors']
+            a['class'] = [c.replace('hover:bg-gray-700', 'hover:bg-slate-700') for c in a.get('class', [])]
+
+
+    # Update header
+    header = soup.find('header')
+    if header:
+        header['class'] = 'bg-white shadow-sm p-4 flex justify-between items-center border-b border-slate-200'
+        h1 = header.find('h1')
+        if h1:
+            h1['class'] = 'text-base md:text-xl font-semibold'
+        p = header.find('p')
+        if p:
+            p['class'] = 'hidden md:block text-sm'
+
+    # Update main
+    main = soup.find('main')
+    if main:
+        main['class'] = 'p-4 md:p-8'
 
     section = soup.find('section')
     if section:
@@ -42,7 +83,6 @@ def beautify_html(filepath):
                 if h4:
                     h4['class'] = 'text-lg font-bold mb-4'
 
-                # Check if a div with the target class already exists
                 if not article.find('div', class_='text-gray-700'):
                     content_children = [child for child in article.children if child != h4 and child.name is not None]
 
@@ -54,7 +94,6 @@ def beautify_html(filepath):
 
                     article.append(div)
 
-                # Apply styles to elements within the (now existing) div
                 div = article.find('div', class_='text-gray-700')
                 if div:
                     for h5 in div.find_all('h5'):
