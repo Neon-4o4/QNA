@@ -15,10 +15,8 @@
   <aside class="bg-gray-800 text-white w-64 min-h-screen p-4 fixed md:relative transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out" id="sidebar">
    <nav>
     <ul>
-     <li>
-      <a class="block py-2 px-4 rounded hover:bg-gray-700" href="part1.html">
-       Part I: Computer Fundamentals
-      </a>
+     <li class="py-2 px-4 font-bold">
+      Part I: Computer Fundamentals
      </li>
      <li>
       <a class="block py-2 px-4 rounded hover:bg-gray-700 ml-4" href="core-computer-organization.html">
@@ -55,10 +53,8 @@
        g. Operating Systems Overview
       </a>
      </li>
-     <li>
-      <a class="block py-2 px-4 rounded hover:bg-gray-700" href="part2.html">
-       Part II: Programming with C/C++
-      </a>
+     <li class="py-2 px-4 font-bold">
+      Part II: Programming with C/C++
      </li>
      <li>
       <a class="block py-2 px-4 rounded hover:bg-gray-700 ml-4" href="preliminaries.html">
@@ -130,55 +126,60 @@
    </header>
    <main class="p-8">
     <section id="applications-in-mechatronics-engineering">
-     <h3>
+     <h3 class="text-2xl font-bold mb-8">
       j. Applications in Mechatronics Engineering
      </h3>
-     <article>
-      <h4>
+     <article class="bg-white p-6 rounded-lg shadow-md mb-6">
+      <h4 class="text-lg font-bold mb-4">
        1. Explain the usefulness of C program to control a ROBOT. / Illustrate the superior contribution of C program on the controlling of robotic and mechatronic systems.
       </h4>
-      <p>
-       The C programming language is highly useful and widely adopted for controlling robots and mechatronic systems due to its unique combination of features:
-      </p>
-      <ol>
-       <li>
-        <strong>
-         High Performance:
-        </strong>
-        C compiles to fast, efficient machine code, which is critical for real-time control systems where timing and responsiveness are paramount.
-       </li>
-       <li>
-        <strong>
-         Low-Level Memory Access:
-        </strong>
-        C provides pointers, which allow for direct manipulation of memory addresses. This is essential for interfacing with hardware, such as reading sensor data from specific registers or controlling motors by writing to specific memory-mapped I/O ports.
-       </li>
-       <li>
-        <strong>
-         Hardware Proximity:
-        </strong>
-        C acts as a "portable assembly language," providing close control over hardware resources without sacrificing the structure and readability of a high-level language.
-       </li>
-       <li>
-        <strong>
-         Portability:
-        </strong>
-        C code is highly portable and can be compiled to run on a wide variety of microcontrollers and processors that are the "brains" of robotic systems.
-       </li>
-       <li>
-        <strong>
-         Extensive Ecosystem:
-        </strong>
-        C has a mature ecosystem with extensive libraries, compilers, and debuggers available for virtually every embedded platform.
-       </li>
-      </ol>
+      <div class="text-gray-700">
+       <div class="text-gray-700">
+        <p>
+         The C programming language is highly useful and widely adopted for controlling robots and mechatronic systems due to its unique combination of features:
+        </p>
+        <ol class="list-decimal list-inside">
+         <li>
+          <strong>
+           High Performance:
+          </strong>
+          C compiles to fast, efficient machine code, which is critical for real-time control systems where timing and responsiveness are paramount.
+         </li>
+         <li>
+          <strong>
+           Low-Level Memory Access:
+          </strong>
+          C provides pointers, which allow for direct manipulation of memory addresses. This is essential for interfacing with hardware, such as reading sensor data from specific registers or controlling motors by writing to specific memory-mapped I/O ports.
+         </li>
+         <li>
+          <strong>
+           Hardware Proximity:
+          </strong>
+          C acts as a "portable assembly language," providing close control over hardware resources without sacrificing the structure and readability of a high-level language.
+         </li>
+         <li>
+          <strong>
+           Portability:
+          </strong>
+          C code is highly portable and can be compiled to run on a wide variety of microcontrollers and processors that are the "brains" of robotic systems.
+         </li>
+         <li>
+          <strong>
+           Extensive Ecosystem:
+          </strong>
+          C has a mature ecosystem with extensive libraries, compilers, and debuggers available for virtually every embedded platform.
+         </li>
+        </ol>
+       </div>
+      </div>
      </article>
-     <article>
-      <h4>
+     <article class="bg-white p-6 rounded-lg shadow-md mb-6">
+      <h4 class="text-lg font-bold mb-4">
        2. Suppose, a maze solving Robot... Write a C program to find the final position of the Robot if the initial position is (2,2) and the following commands are pressed ULDRR.
       </h4>
-      <pre><code>
-#include <stdio.h>
+      <div class="text-gray-700">
+       <div class="text-gray-700">
+        <pre class="bg-gray-200 p-4 rounded-md"><code>#include <stdio.h>
 #include <string.h>
 
 int main() {
@@ -190,8 +191,8 @@ int main() {
     int i;
     int len = strlen(commands);
 
-    printf("Initial Position: (%d, %d)\\n", x, y);
-    printf("Commands: %s\\n", commands);
+    printf("Initial Position: (%d, %d)\n", x, y);
+    printf("Commands: %s\n", commands);
 
     // Process each command
     for (i = 0; i &lt; len; i++) {
@@ -212,44 +213,47 @@ int main() {
                 // In this case, stop would just end the command processing
                 goto end_loop; // Using goto for simple exit
             default:
-                printf("Invalid command: %c\\n", commands[i]);
+                printf("Invalid command: %c\n", commands[i]);
                 break;
         }
     }
 
 end_loop:
-    printf("Final Position: (%d, %d)\\n", x, y);
+    printf("Final Position: (%d, %d)\n", x, y);
 
     return 0;
 }
-                    </string.h></stdio.h></code></pre>
+</string.h></stdio.h></code></pre>
+       </div>
+      </div>
      </article>
-     <article>
-      <h4>
+     <article class="bg-white p-6 rounded-lg shadow-md mb-6">
+      <h4 class="text-lg font-bold mb-4">
        3. Write a C program to find the node voltages and as shown in the provided figure.
       </h4>
-      <p>
-       <em>
-        Since no figure is provided, a general explanation and a sample program to solve a simple system of two linear equations (which is a common result of nodal analysis) are given.
-       </em>
-      </p>
-      <p>
-       Nodal analysis in circuit theory typically results in a system of linear equations of the form Ax = B, where x represents the unknown node voltages. To find these voltages, one must solve this system of equations.
-      </p>
-      <h5>
-       Example: Solving a 2-Node Circuit
-      </h5>
-      <p>
-       Assume nodal analysis gives the following two equations:
-       <br/>
-       3*V1 - 1*V2 = 5
-       <br/>
-       -1*V1 + 4*V2 = 10
-       <br/>
-       The following C program uses Cramer's rule to solve this simple 2x2 system.
-      </p>
-      <pre><code>
-#include <stdio.h>
+      <div class="text-gray-700">
+       <div class="text-gray-700">
+        <p>
+         <em>
+          Since no figure is provided, a general explanation and a sample program to solve a simple system of two linear equations (which is a common result of nodal analysis) are given.
+         </em>
+        </p>
+        <p>
+         Nodal analysis in circuit theory typically results in a system of linear equations of the form Ax = B, where x represents the unknown node voltages. To find these voltages, one must solve this system of equations.
+        </p>
+        <h5 class="font-semibold mt-4">
+         Example: Solving a 2-Node Circuit
+        </h5>
+        <p>
+         Assume nodal analysis gives the following two equations:
+         <br/>
+         3*V1 - 1*V2 = 5
+         <br/>
+         -1*V1 + 4*V2 = 10
+         <br/>
+         The following C program uses Cramer's rule to solve this simple 2x2 system.
+        </p>
+        <pre class="bg-gray-200 p-4 rounded-md"><code>#include <stdio.h>
 
 int main() {
     // For a system of equations:
@@ -266,7 +270,7 @@ int main() {
     determinant = a1 * b2 - a2 * b1;
 
     if (determinant == 0) {
-        printf("The system has no unique solution.\\n");
+        printf("The system has no unique solution.\n");
     } else {
         // Calculate determinant for V1
         det_v1 = d1 * b2 - d2 * b1;
@@ -277,21 +281,24 @@ int main() {
         v1 = det_v1 / determinant;
         v2 = det_v2 / determinant;
 
-        printf("The node voltages are:\\n");
-        printf("V1 = %.2f V\\n", v1);
-        printf("V2 = %.2f V\\n", v2);
+        printf("The node voltages are:\n");
+        printf("V1 = %.2f V\n", v1);
+        printf("V2 = %.2f V\n", v2);
     }
 
     return 0;
 }
-                    </stdio.h></code></pre>
+</stdio.h></code></pre>
+       </div>
+      </div>
      </article>
-     <article>
-      <h4>
+     <article class="bg-white p-6 rounded-lg shadow-md mb-6">
+      <h4 class="text-lg font-bold mb-4">
        4. Write a program to display the efficiency of a machinery, where the terms related to the calculation are taken from user by keyboard.
       </h4>
-      <pre><code>
-#include <stdio.h>
+      <div class="text-gray-700">
+       <div class="text-gray-700">
+        <pre class="bg-gray-200 p-4 rounded-md"><code>#include <stdio.h>
 
 int main() {
     float input_power, output_power, efficiency;
@@ -305,125 +312,135 @@ int main() {
 
     // Validate the input
     if (input_power &lt;= 0) {
-        printf("Error: Input power must be a positive value.\\n");
+        printf("Error: Input power must be a positive value.\n");
         return 1;
     }
     if (output_power &gt; input_power) {
-        printf("Warning: Output power is greater than input power. Efficiency will be &gt; 100%%.\\n");
+        printf("Warning: Output power is greater than input power. Efficiency will be &gt; 100%.\n");
     }
 
     // Calculate the efficiency
     efficiency = (output_power / input_power) * 100.0;
 
     // Display the result
-    printf("\\nThe efficiency of the machinery is: %.2f%%\\n", efficiency);
+    printf("\nThe efficiency of the machinery is: %.2f%%\n", efficiency);
 
     return 0;
 }
-                    </stdio.h></code></pre>
+</stdio.h></code></pre>
+       </div>
+      </div>
      </article>
-     <article>
-      <h4>
+     <article class="bg-white p-6 rounded-lg shadow-md mb-6">
+      <h4 class="text-lg font-bold mb-4">
        5. Write an algorithm to convert electrical energy to mechanical energy in a system.
       </h4>
-      <p>
-       This is a conceptual algorithm describing the process in a typical electromechanical system like a motor.
-      </p>
-      <ol>
-       <li>
-        <strong>
-         START
-        </strong>
-       </li>
-       <li>
-        <strong>
-         Provide Electrical Energy Source:
-        </strong>
-        Connect a power source (e.g., battery, AC mains) to the system.
-       </li>
-       <li>
-        <strong>
-         Generate Magnetic Field:
-        </strong>
-        Pass an electric current from the source through coils of wire (the stator in a motor). This converts electrical energy into a magnetic field according to Ampere's Law.
-       </li>
-       <li>
-        <strong>
-         Induce Force/Torque:
-        </strong>
-        Place a second component (the rotor, which can be a permanent magnet or another set of coils) within the magnetic field of the stator. The interaction between the magnetic fields creates a force (Lorentz force) that results in a torque, causing the rotor to turn.
-       </li>
-       <li>
-        <strong>
-         Produce Mechanical Work:
-        </strong>
-        Connect the rotating rotor to a shaft or other mechanical linkage. The rotation of the shaft represents kinetic mechanical energy, which can be used to perform work (e.g., turn a wheel, lift a weight).
-       </li>
-       <li>
-        <strong>
-         STOP
-        </strong>
-       </li>
-      </ol>
+      <div class="text-gray-700">
+       <div class="text-gray-700">
+        <p>
+         This is a conceptual algorithm describing the process in a typical electromechanical system like a motor.
+        </p>
+        <ol class="list-decimal list-inside">
+         <li>
+          <strong>
+           START
+          </strong>
+         </li>
+         <li>
+          <strong>
+           Provide Electrical Energy Source:
+          </strong>
+          Connect a power source (e.g., battery, AC mains) to the system.
+         </li>
+         <li>
+          <strong>
+           Generate Magnetic Field:
+          </strong>
+          Pass an electric current from the source through coils of wire (the stator in a motor). This converts electrical energy into a magnetic field according to Ampere's Law.
+         </li>
+         <li>
+          <strong>
+           Induce Force/Torque:
+          </strong>
+          Place a second component (the rotor, which can be a permanent magnet or another set of coils) within the magnetic field of the stator. The interaction between the magnetic fields creates a force (Lorentz force) that results in a torque, causing the rotor to turn.
+         </li>
+         <li>
+          <strong>
+           Produce Mechanical Work:
+          </strong>
+          Connect the rotating rotor to a shaft or other mechanical linkage. The rotation of the shaft represents kinetic mechanical energy, which can be used to perform work (e.g., turn a wheel, lift a weight).
+         </li>
+         <li>
+          <strong>
+           STOP
+          </strong>
+         </li>
+        </ol>
+       </div>
+      </div>
      </article>
-     <article>
-      <h4>
+     <article class="bg-white p-6 rounded-lg shadow-md mb-6">
+      <h4 class="text-lg font-bold mb-4">
        6. Suppose you want to develop a project. Then what is the necessity of programming in your projects? Explain briefly.
       </h4>
-      <p>
-       Programming is essential in modern projects, especially in fields like mechatronics, because it serves as the
-       <strong>
-        "brain" or intelligence
-       </strong>
-       that controls the project's hardware and defines its behavior.
-      </p>
-      <p>
-       The necessity of programming can be summarized as:
-      </p>
-      <ol>
-       <li>
-        <strong>
-         Control Logic:
-        </strong>
-        Programming implements the decision-making logic. It tells the project
-        <em>
-         what
-        </em>
-        to do,
-        <em>
-         when
-        </em>
-        to do it, and
-        <em>
-         how
-        </em>
-        to react to different inputs (e.g., "if sensor detects an obstacle, stop the motor").
-       </li>
-       <li>
-        <strong>
-         Data Processing:
-        </strong>
-        Projects often rely on collecting data from sensors. Programming is necessary to read this data, interpret it, perform calculations, and filter out noise.
-       </li>
-       <li>
-        <strong>
-         Automation:
-        </strong>
-        Programming automates complex or repetitive tasks, enabling a project to operate autonomously without constant human intervention.
-       </li>
-       <li>
-        <strong>
-         User Interface:
-        </strong>
-        It provides a way for humans to interact with the project, whether through a screen, buttons, or a remote connection.
-       </li>
-       <li>
-        <strong>
-         Flexibility:
-        </strong>
-        A project's functionality can be drastically changed or updated by simply modifying the software, without needing to redesign the physical hardware.
-       </li>
-      </ol>
+      <div class="text-gray-700">
+       <div class="text-gray-700">
+        <p>
+         Programming is essential in modern projects, especially in fields like mechatronics, because it serves as the
+         <strong>
+          "brain" or intelligence
+         </strong>
+         that controls the project's hardware and defines its behavior.
+        </p>
+        <p>
+         The necessity of programming can be summarized as:
+        </p>
+        <ol class="list-decimal list-inside">
+         <li>
+          <strong>
+           Control Logic:
+          </strong>
+          Programming implements the decision-making logic. It tells the project
+          <em>
+           what
+          </em>
+          to do,
+          <em>
+           when
+          </em>
+          to do it, and
+          <em>
+           how
+          </em>
+          to react to different inputs (e.g., "if sensor detects an obstacle, stop the motor").
+         </li>
+         <li>
+          <strong>
+           Data Processing:
+          </strong>
+          Projects often rely on collecting data from sensors. Programming is necessary to read this data, interpret it, perform calculations, and filter out noise.
+         </li>
+         <li>
+          <strong>
+           Automation:
+          </strong>
+          Programming automates complex or repetitive tasks, enabling a project to operate autonomously without constant human intervention.
+         </li>
+         <li>
+          <strong>
+           User Interface:
+          </strong>
+          It provides a way for humans to interact with the project, whether through a screen, buttons, or a remote connection.
+         </li>
+         <li>
+          <strong>
+           Flexibility:
+          </strong>
+          A project's functionality can be drastically changed or updated by simply modifying the software, without needing to redesign the physical hardware.
+         </li>
+        </ol>
+       </div>
+      </div>
      </article>
     </section>
    </main>

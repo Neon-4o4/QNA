@@ -15,10 +15,8 @@
   <aside class="bg-gray-800 text-white w-64 min-h-screen p-4 fixed md:relative transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out" id="sidebar">
    <nav>
     <ul>
-     <li>
-      <a class="block py-2 px-4 rounded hover:bg-gray-700" href="part1.html">
-       Part I: Computer Fundamentals
-      </a>
+     <li class="py-2 px-4 font-bold">
+      Part I: Computer Fundamentals
      </li>
      <li>
       <a class="block py-2 px-4 rounded hover:bg-gray-700 ml-4" href="core-computer-organization.html">
@@ -55,10 +53,8 @@
        g. Operating Systems Overview
       </a>
      </li>
-     <li>
-      <a class="block py-2 px-4 rounded hover:bg-gray-700" href="part2.html">
-       Part II: Programming with C/C++
-      </a>
+     <li class="py-2 px-4 font-bold">
+      Part II: Programming with C/C++
      </li>
      <li>
       <a class="block py-2 px-4 rounded hover:bg-gray-700 ml-4" href="preliminaries.html">
@@ -130,107 +126,110 @@
    </header>
    <main class="p-8">
     <section id="decision-making">
-     <h3>
+     <h3 class="text-2xl font-bold mb-8">
       d. Decision Making
      </h3>
-     <article>
-      <h4>
+     <article class="bg-white p-6 rounded-lg shadow-md mb-6">
+      <h4 class="text-lg font-bold mb-4">
        1. What is the purpose of the switch statement? How does it differ from the 'if-else' statement?
       </h4>
-      <p>
-       The purpose of the switch statement is to provide a multi-way branching capability. It allows a program to execute different blocks of code based on the value of a single variable or expression. It serves as a more readable and often more efficient alternative to a long series of if-else if-else statements.
-      </p>
-      <h5>
-       Differences from if-else:
-      </h5>
-      <table>
-       <thead>
-        <tr>
-         <th>
-          Feature
-         </th>
-         <th>
-          switch Statement
-         </th>
-         <th>
-          if-else Statement
-         </th>
-        </tr>
-       </thead>
-       <tbody>
-        <tr>
-         <td>
-          <strong>
-           Condition
-          </strong>
-         </td>
-         <td>
-          Tests a variable against a set of discrete integer or character constant values (case labels).
-         </td>
-         <td>
-          Can evaluate complex relational and logical expressions (e.g., x &gt; 10 &amp;&amp; y &lt; 20).
-         </td>
-        </tr>
-        <tr>
-         <td>
-          <strong>
-           Data Types
-          </strong>
-         </td>
-         <td>
-          Can only test for equality on integral types (int, char).
-         </td>
-         <td>
-          Can handle any type of expression that results in a true (non-zero) or false (zero) value, including ranges and floating-point numbers.
-         </td>
-        </tr>
-        <tr>
-         <td>
-          <strong>
-           Flexibility
-          </strong>
-         </td>
-         <td>
-          Less flexible; limited to equality checks on a single variable.
-         </td>
-         <td>
-          Highly flexible; can compare different variables and use various operators.
-         </td>
-        </tr>
-        <tr>
-         <td>
-          <strong>
-           Readability
-          </strong>
-         </td>
-         <td>
-          More readable and cleaner for a large number of fixed choices.
-         </td>
-         <td>
-          Can become nested and hard to read if there are many conditions ("if-else ladder").
-         </td>
-        </tr>
-        <tr>
-         <td>
-          <strong>
-           "Fall- through"
-          </strong>
-         </td>
-         <td>
-          Has a "fall-through" behavior where execution continues to the next case unless a break statement is used.
-         </td>
-         <td>
-          Each if or else block is a distinct, isolated scope.
-         </td>
-        </tr>
-       </tbody>
-      </table>
+      <div class="text-gray-700">
+       <p>
+        The purpose of the switch statement is to provide a multi-way branching capability. It allows a program to execute different blocks of code based on the value of a single variable or expression. It serves as a more readable and often more efficient alternative to a long series of if-else if-else statements.
+       </p>
+       <h5 class="font-semibold mt-4">
+        Differences from if-else:
+       </h5>
+       <table>
+        <thead>
+         <tr>
+          <th>
+           Feature
+          </th>
+          <th>
+           switch Statement
+          </th>
+          <th>
+           if-else Statement
+          </th>
+         </tr>
+        </thead>
+        <tbody>
+         <tr>
+          <td>
+           <strong>
+            Condition
+           </strong>
+          </td>
+          <td>
+           Tests a variable against a set of discrete integer or character constant values (case labels).
+          </td>
+          <td>
+           Can evaluate complex relational and logical expressions (e.g., x &gt; 10 &amp;&amp; y &lt; 20).
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <strong>
+            Data Types
+           </strong>
+          </td>
+          <td>
+           Can only test for equality on integral types (int, char).
+          </td>
+          <td>
+           Can handle any type of expression that results in a true (non-zero) or false (zero) value, including ranges and floating-point numbers.
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <strong>
+            Flexibility
+           </strong>
+          </td>
+          <td>
+           Less flexible; limited to equality checks on a single variable.
+          </td>
+          <td>
+           Highly flexible; can compare different variables and use various operators.
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <strong>
+            Readability
+           </strong>
+          </td>
+          <td>
+           More readable and cleaner for a large number of fixed choices.
+          </td>
+          <td>
+           Can become nested and hard to read if there are many conditions ("if-else ladder").
+          </td>
+         </tr>
+         <tr>
+          <td>
+           <strong>
+            "Fall- through"
+           </strong>
+          </td>
+          <td>
+           Has a "fall-through" behavior where execution continues to the next case unless a break statement is used.
+          </td>
+          <td>
+           Each if or else block is a distinct, isolated scope.
+          </td>
+         </tr>
+        </tbody>
+       </table>
+      </div>
      </article>
-     <article>
-      <h4>
+     <article class="bg-white p-6 rounded-lg shadow-md mb-6">
+      <h4 class="text-lg font-bold mb-4">
        2. Write a C program that read a mark and display its grade using switch statement.
       </h4>
-      <pre><code>
+      <div class="text-gray-700">
+       <pre class="bg-gray-200 p-4 rounded-md"><code>
 #include <stdio.h>
 
 int main() {
@@ -272,46 +271,49 @@ int main() {
     return 0;
 }
                     </stdio.h></code></pre>
+      </div>
      </article>
-     <article>
-      <h4>
+     <article class="bg-white p-6 rounded-lg shadow-md mb-6">
+      <h4 class="text-lg font-bold mb-4">
        3. Define loop control statements. Is a 'break' required by 'default' case in switch statement? Justify your answer.
       </h4>
-      <p>
-       <strong>
-        Loop control statements
-       </strong>
-       are statements that alter the normal, sequential flow of execution within a loop. They are used to terminate a loop prematurely or to skip an iteration. The main loop control statements in C are:
-      </p>
-      <ul>
-       <li>
-        break: Immediately terminates the innermost loop or switch statement in which it appears.
-       </li>
-       <li>
-        continue: Skips the remaining code in the current iteration of a loop and proceeds to the next iteration.
-       </li>
-       <li>
-        goto: Unconditionally transfers control to a labeled statement (its use is highly discouraged).
-       </li>
-      </ul>
-      <h5>
-       Is break required in the default case?
-      </h5>
-      <p>
-       No, a break statement is not syntactically required for the default case if it is the last case in the switch block.
-      </p>
-      <h5>
-       Justification:
-      </h5>
-      <p>
-       The switch statement executes code until it encounters a break statement or until the end of the switch block is reached. If the default case is the very last one, after its code is executed, control will naturally fall out of the switch block anyway. Therefore, a break is redundant.
-       <br/>
-       However, it is considered
-       <strong>
-        good programming practice
-       </strong>
-       to include a break in the default case. This prevents accidental "fall-through" errors if another case is added after the default case in the future.
-      </p>
+      <div class="text-gray-700">
+       <p>
+        <strong>
+         Loop control statements
+        </strong>
+        are statements that alter the normal, sequential flow of execution within a loop. They are used to terminate a loop prematurely or to skip an iteration. The main loop control statements in C are:
+       </p>
+       <ul class="list-disc list-inside ml-4">
+        <li>
+         break: Immediately terminates the innermost loop or switch statement in which it appears.
+        </li>
+        <li>
+         continue: Skips the remaining code in the current iteration of a loop and proceeds to the next iteration.
+        </li>
+        <li>
+         goto: Unconditionally transfers control to a labeled statement (its use is highly discouraged).
+        </li>
+       </ul>
+       <h5 class="font-semibold mt-4">
+        Is break required in the default case?
+       </h5>
+       <p>
+        No, a break statement is not syntactically required for the default case if it is the last case in the switch block.
+       </p>
+       <h5 class="font-semibold mt-4">
+        Justification:
+       </h5>
+       <p>
+        The switch statement executes code until it encounters a break statement or until the end of the switch block is reached. If the default case is the very last one, after its code is executed, control will naturally fall out of the switch block anyway. Therefore, a break is redundant.
+        <br/>
+        However, it is considered
+        <strong>
+         good programming practice
+        </strong>
+        to include a break in the default case. This prevents accidental "fall-through" errors if another case is added after the default case in the future.
+       </p>
+      </div>
      </article>
     </section>
    </main>
