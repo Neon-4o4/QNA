@@ -72,12 +72,13 @@ def beautify_html(filepath):
     if section:
         h3 = section.find('h3')
         if h3 and 'text-2xl' not in h3.get('class', []):
-            h3['class'] = "text-2xl font-bold mb-8"
+            h3['class'] = "text-2xl font-bold mb-8 text-center"
+            h3.string = h3.string.split('. ')[-1]
 
         articles = section.find_all('article')
         for article in articles:
             if 'bg-white' not in article.get('class', []):
-                article['class'] = 'bg-white p-6 rounded-lg shadow-md mb-6'
+                article['class'] = 'bg-white p-4 rounded-lg shadow-md mb-4'
 
                 h4 = article.find('h4')
                 if h4:
