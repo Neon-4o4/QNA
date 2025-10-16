@@ -23,8 +23,14 @@
 </head>
 <body class="bg-slate-50 font-sans flex h-screen text-slate-900">
     <!-- Sidebar -->
-    <aside id="sidebar" class="bg-slate-900 text-white w-64 min-h-screen p-4 fixed md:relative transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out z-50 flex-shrink-0">
-        <nav class="sidebar">
+    <aside id="sidebar" class="bg-slate-900 text-slate-200 w-64 min-h-screen p-4 fixed md:relative transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out z-30 flex-shrink-0">
+        <div class="flex justify-between items-center mb-4">
+            <h2 class="text-lg font-semibold text-white">CSE 1287 QnA</h2>
+            <button id="sidebar-close" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <nav class="h-full overflow-y-auto">
             <ul>
                 <li class="py-2 px-4 font-bold text-slate-400">Part I: Computer Fundamentals</li>
                 <li><a href="core-computer-organization.html" class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors">a. Core Computer Organization</a></li>

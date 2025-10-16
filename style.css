@@ -1,20 +1,3 @@
-.sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100vh; /* Full viewport height */
-  width: 250px;  /* Adjust width as needed */
-  overflow-y: auto; /* Adds a scrollbar if content is too long */
-  background-color: #f8f9fa; /* A light background color */
-  padding: 20px;
-  border-right: 1px solid #dee2e6; /* Optional: adds a border */
-}
-
-body {
-  margin-left: 290px; /* Adjust to be a bit wider than your sidebar */
-  padding: 20px;
-}
-
 nav a.active {
     background-color: #4a5568;
     color: #ffffff;

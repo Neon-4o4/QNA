@@ -37,10 +37,21 @@ def beautify_html(filepath):
     # Update sidebar
     sidebar = soup.find('aside', {'id': 'sidebar'})
     if sidebar:
-        sidebar['class'] = 'bg-slate-900 text-white w-64 min-h-screen p-4 fixed md:relative transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out z-30 flex-shrink-0'
+        sidebar['class'] = 'bg-slate-900 text-slate-200 w-64 min-h-screen p-4 fixed md:relative transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out z-30 flex-shrink-0'
+
+        # Add close button
+        if not sidebar.find('button', {'id': 'sidebar-close'}):
+            close_button = BeautifulSoup('''<div class="flex justify-between items-center mb-4">
+            <h2 class="text-lg font-semibold text-white">CSE 1287 QnA</h2>
+            <button id="sidebar-close" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>''', 'html.parser')
+            sidebar.insert(0, close_button)
+
         nav = sidebar.find('nav')
-        if nav:
-            nav['class'] = 'sidebar'
+        if nav and 'sidebar' not in nav.get('class', []):
+            nav['class'] = 'h-full overflow-y-auto'
 
         # Update headings
         list_items = sidebar.find_all('li')
@@ -57,11 +68,11 @@ def beautify_html(filepath):
 
     # Update header and main content wrapper
     header = soup.find('header')
-    if header and header.parent.name != 'div' and not header.parent.has_attr('class'):
+    if header and header.parent.name == 'body':
         wrapper = soup.new_tag('div')
         wrapper['class'] = 'flex flex-col flex-1 h-screen overflow-y-auto'
-        header.wrap(wrapper)
         main = soup.find('main')
+        header.wrap(wrapper)
         if main:
             wrapper.append(main)
 
@@ -94,9 +105,9 @@ def beautify_html(filepath):
             if h4:
                 h4['class'] = 'bg-slate-200 p-4 rounded-t-lg font-bold'
 
-            div = article.find('div', class_='text-gray-700')
-            if div:
-                div['class'] = 'bg-white p-4 rounded-b-lg shadow-md'
+            div = article.find('div')
+            if div and 'text-gray-700' not in div.get('class', []):
+                div['class'] = 'bg-white p-4 rounded-b-lg shadow-md hidden'
 
             # Apply styles to elements within the (now existing) div
             if div:

@@ -12,44 +12,55 @@
  </head>
  <body class="bg-slate-50 font-sans flex h-screen text-slate-900">
   <!-- Sidebar -->
-  <aside class="bg-slate-900 text-white w-64 min-h-screen p-4 fixed md:relative transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out z-30 flex-shrink-0" id="sidebar">
+  <aside class="bg-slate-900 text-slate-200 w-64 min-h-screen p-4 fixed md:relative transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out z-30 flex-shrink-0" id="sidebar">
+   <div class="flex justify-between items-center mb-4">
+    <h2 class="text-lg font-semibold text-white">
+     CSE 1287 QnA
+    </h2>
+    <button class="md:hidden" id="sidebar-close">
+     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      </path>
+     </svg>
+    </button>
+   </div>
    <nav class="sidebar">
     <ul>
      <li class="py-2 px-4 font-bold text-slate-400">
       Part I: Computer Fundamentals
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="core-computer-organization.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="core-computer-organization.html">
        a. Core Computer Organization
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="storage-and-memory.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="storage-and-memory.html">
        b. Storage and Memory
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="number-systems.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="number-systems.html">
        c. Number Systems
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="algorithms-and-flowcharts.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="algorithms-and-flowcharts.html">
        d. Algorithms and Flowcharts
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="programming-language-levels.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="programming-language-levels.html">
        e. Programming Language Levels
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="language-translators.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="language-translators.html">
        f. Language Translators
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="operating-systems-overview.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="operating-systems-overview.html">
        g. Operating Systems Overview
       </a>
      </li>
@@ -57,52 +68,52 @@
       Part II: Programming with C/C++
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="preliminaries.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="preliminaries.html">
        a. Preliminaries
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="io-statements.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="io-statements.html">
        b. I/O Statements
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="expressions-and-operators.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="expressions-and-operators.html">
        c. Expressions and Operators
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="decision-making.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="decision-making.html">
        d. Decision Making
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="loops.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="loops.html">
        e. Loops
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="functions-and-calling-procedures.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="functions-and-calling-procedures.html">
        f. Functions
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="recursion.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="recursion.html">
        g. Recursion
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="arrays-and-pointers.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="arrays-and-pointers.html">
        h. Arrays and Pointers
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="structure-and-union.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="structure-and-union.html">
        i. Structure and Union
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="applications-in-mechatronics-engineering.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="applications-in-mechatronics-engineering.html">
        j. Applications in Mechatronics
       </a>
      </li>
@@ -133,7 +144,7 @@
       <h4 class="bg-slate-200 p-4 rounded-t-lg font-bold">
        1. Distinguish between Primary and Secondary memory.
       </h4>
-      <div class="bg-white p-4 rounded-b-lg shadow-md">
+      <div class="bg-white p-4 rounded-b-lg shadow-md hidden">
        <table class="border-collapse border border-slate-500">
         <thead>
          <tr>
@@ -248,7 +259,7 @@
       <h4 class="bg-slate-200 p-4 rounded-t-lg font-bold">
        2. Explain the difference between volatile and non-volatile memory. Give an example of each type of memory.
       </h4>
-      <div class="bg-white p-4 rounded-b-lg shadow-md">
+      <div class="bg-white p-4 rounded-b-lg shadow-md hidden">
        <p>
         The fundamental difference between volatile and non-volatile memory is its ability to retain data when power is removed.
        </p>
@@ -288,7 +299,7 @@
       <h4 class="bg-slate-200 p-4 rounded-t-lg font-bold">
        3. Define RAM and ROM.
       </h4>
-      <div class="bg-white p-4 rounded-b-lg shadow-md">
+      <div class="bg-white p-4 rounded-b-lg shadow-md hidden">
        <ul class="list-disc list-inside ml-4">
         <li>
          <strong>
@@ -309,7 +320,7 @@
       <h4 class="bg-slate-200 p-4 rounded-t-lg font-bold">
        4. Why is RAM called "Random" Access Memory? How is it different from hard disk? Briefly discuss. / Why RAM is called primary memory? Briefly describe.
       </h4>
-      <div class="bg-white p-4 rounded-b-lg shadow-md">
+      <div class="bg-white p-4 rounded-b-lg shadow-md hidden">
        <p>
         RAM is called "Random" Access Memory because any memory location (or address) within it can be accessed directly in a very short and nearly constant amount of time, regardless of its physical position. This is in contrast to sequential access memory (like old magnetic tapes), where data must be read in the order it was stored.
        </p>
@@ -345,7 +356,7 @@
       <h4 class="bg-slate-200 p-4 rounded-t-lg font-bold">
        5. What is Cache memory? Why is it so fast?
       </h4>
-      <div class="bg-white p-4 rounded-b-lg shadow-md">
+      <div class="bg-white p-4 rounded-b-lg shadow-md hidden">
        <p>
         Cache memory is a small, extremely fast, and expensive type of volatile memory that is located between the CPU and the main memory (RAM). Its purpose is to store frequently accessed data and instructions from RAM, allowing the CPU to retrieve them much more quickly than if it had to go to RAM every time.
        </p>
@@ -372,7 +383,7 @@
       <h4 class="bg-slate-200 p-4 rounded-t-lg font-bold">
        6. How does 3-level cache organization work between CPU and main memory? Explain with proper diagram briefly. / Why is cached used? Explain the three level cache organizations between CPU and main memory.
       </h4>
-      <div class="bg-white p-4 rounded-b-lg shadow-md">
+      <div class="bg-white p-4 rounded-b-lg shadow-md hidden">
        <p>
         Cache is used to bridge the significant speed gap between the very fast CPU and the relatively slow main memory (RAM). By storing frequently used data closer to the CPU, it reduces the average memory access time and improves overall system performance.
        </p>
@@ -412,7 +423,7 @@
       <h4 class="bg-slate-200 p-4 rounded-t-lg font-bold">
        7. Describe how data is stored in (i) Hard disk drive, (ii) CD/DVD ROM.
       </h4>
-      <div class="bg-white p-4 rounded-b-lg shadow-md">
+      <div class="bg-white p-4 rounded-b-lg shadow-md hidden">
        <h5 class="font-semibold mt-4">
         (i) Hard Disk Drive (HDD):
        </h5>
@@ -431,7 +442,7 @@
       <h4 class="bg-slate-200 p-4 rounded-t-lg font-bold">
        8. Which one is faster- SRAM cell or DRAM cell? Explain with appropriate circuit diagrams.
       </h4>
-      <div class="bg-white p-4 rounded-b-lg shadow-md">
+      <div class="bg-white p-4 rounded-b-lg shadow-md hidden">
        <p>
         The SRAM (Static RAM) cell is significantly faster than the DRAM (Dynamic RAM) cell.
        </p>
@@ -461,7 +472,7 @@
       <h4 class="bg-slate-200 p-4 rounded-t-lg font-bold">
        9. Draw the block diagram of a 6-transistor SRAM cell.
       </h4>
-      <div class="bg-white p-4 rounded-b-lg shadow-md">
+      <div class="bg-white p-4 rounded-b-lg shadow-md hidden">
        <p>
         A 6-transistor (6T) SRAM cell consists of two main parts:
        </p>
@@ -485,7 +496,7 @@
       <h4 class="bg-slate-200 p-4 rounded-t-lg font-bold">
        10. Mention the significance of memory in embedded programming.
       </h4>
-      <div class="bg-white p-4 rounded-b-lg shadow-md">
+      <div class="bg-white p-4 rounded-b-lg shadow-md hidden">
        <p>
         Memory is highly significant and a critical constraint in embedded programming for several reasons:
        </p>

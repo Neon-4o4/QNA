@@ -1,8 +1,13 @@
 document.addEventListener('DOMContentLoaded', () => {
     const sidebar = document.getElementById('sidebar');
     const sidebarToggle = document.getElementById('sidebar-toggle');
+    const sidebarClose = document.getElementById('sidebar-close');
 
     sidebarToggle.addEventListener('click', () => {
+        sidebar.classList.toggle('-translate-x-full');
+    });
+
+    sidebarClose.addEventListener('click', () => {
         sidebar.classList.toggle('-translate-x-full');
     });
 
@@ -30,18 +35,13 @@ document.addEventListener('DOMContentLoaded', () => {
         header.appendChild(icon);
 
         if (answer) {
-            answer.style.display = 'none';
+            answer.classList.add('hidden');
         }
 
         header.addEventListener('click', () => {
             if (answer) {
-                if (answer.style.display === 'none') {
-                    answer.style.display = 'block';
-                    icon.textContent = '-';
-                } else {
-                    answer.style.display = 'none';
-                    icon.textContent = '+';
-                }
+                answer.classList.toggle('hidden');
+                icon.textContent = icon.textContent === '+' ? '-' : '+';
             }
         });
     });

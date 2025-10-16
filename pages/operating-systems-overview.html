@@ -12,44 +12,55 @@
  </head>
  <body class="bg-slate-50 font-sans flex h-screen text-slate-900">
   <!-- Sidebar -->
-  <aside class="bg-slate-900 text-white w-64 min-h-screen p-4 fixed md:relative transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out z-30 flex-shrink-0" id="sidebar">
+  <aside class="bg-slate-900 text-slate-200 w-64 min-h-screen p-4 fixed md:relative transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out z-30 flex-shrink-0" id="sidebar">
+   <div class="flex justify-between items-center mb-4">
+    <h2 class="text-lg font-semibold text-white">
+     CSE 1287 QnA
+    </h2>
+    <button class="md:hidden" id="sidebar-close">
+     <svg class="w-6 h-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+      </path>
+     </svg>
+    </button>
+   </div>
    <nav class="sidebar">
     <ul>
      <li class="py-2 px-4 font-bold text-slate-400">
       Part I: Computer Fundamentals
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="core-computer-organization.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="core-computer-organization.html">
        a. Core Computer Organization
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="storage-and-memory.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="storage-and-memory.html">
        b. Storage and Memory
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="number-systems.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="number-systems.html">
        c. Number Systems
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="algorithms-and-flowcharts.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="algorithms-and-flowcharts.html">
        d. Algorithms and Flowcharts
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="programming-language-levels.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="programming-language-levels.html">
        e. Programming Language Levels
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="language-translators.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="language-translators.html">
        f. Language Translators
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="operating-systems-overview.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="operating-systems-overview.html">
        g. Operating Systems Overview
       </a>
      </li>
@@ -57,52 +68,52 @@
       Part II: Programming with C/C++
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="preliminaries.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="preliminaries.html">
        a. Preliminaries
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="io-statements.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="io-statements.html">
        b. I/O Statements
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="expressions-and-operators.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="expressions-and-operators.html">
        c. Expressions and Operators
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="decision-making.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="decision-making.html">
        d. Decision Making
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="loops.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="loops.html">
        e. Loops
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="functions-and-calling-procedures.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="functions-and-calling-procedures.html">
        f. Functions
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="recursion.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="recursion.html">
        g. Recursion
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="arrays-and-pointers.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="arrays-and-pointers.html">
        h. Arrays and Pointers
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="structure-and-union.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="structure-and-union.html">
        i. Structure and Union
       </a>
      </li>
      <li>
-      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="applications-in-mechatronics-engineering.html">
+      <a class="block py-2 px-4 rounded hover:bg-slate-700 ml-4 transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors transition-colors" href="applications-in-mechatronics-engineering.html">
        j. Applications in Mechatronics
       </a>
      </li>
@@ -133,7 +144,7 @@
       <h4 class="bg-slate-200 p-4 rounded-t-lg font-bold">
        1. What is an operating system? Describe objectives and functions of operating system.
       </h4>
-      <div class="bg-white p-4 rounded-b-lg shadow-md">
+      <div class="bg-white p-4 rounded-b-lg shadow-md hidden">
        <p>
         An
         <strong>
@@ -211,7 +222,7 @@
       <h4 class="bg-slate-200 p-4 rounded-t-lg font-bold">
        2. Write short notes on the following: i) Microsoft Windows OS and ii) Linux OS.
       </h4>
-      <div class="bg-white p-4 rounded-b-lg shadow-md">
+      <div class="bg-white p-4 rounded-b-lg shadow-md hidden">
        <h5 class="font-semibold mt-4">
         i) Microsoft Windows OS:
        </h5>
@@ -230,7 +241,7 @@
       <h4 class="bg-slate-200 p-4 rounded-t-lg font-bold">
        3. Write short notes on the following operating systems: i) Microsoft Windows OS ii) MS-DOS.
       </h4>
-      <div class="bg-white p-4 rounded-b-lg shadow-md">
+      <div class="bg-white p-4 rounded-b-lg shadow-md hidden">
        <h5 class="font-semibold mt-4">
         i) Microsoft Windows OS:
        </h5>
@@ -249,7 +260,7 @@
       <h4 class="bg-slate-200 p-4 rounded-t-lg font-bold">
        4. Why is LINUX preferable? Give some reasons.
       </h4>
-      <div class="bg-white p-4 rounded-b-lg shadow-md">
+      <div class="bg-white p-4 rounded-b-lg shadow-md hidden">
        <p>
         Linux is preferable in many scenarios for several key reasons:
        </p>
@@ -297,7 +308,7 @@
       <h4 class="bg-slate-200 p-4 rounded-t-lg font-bold">
        5. What are the advantages and disadvantages of MAC operating system?
       </h4>
-      <div class="bg-white p-4 rounded-b-lg shadow-md">
+      <div class="bg-white p-4 rounded-b-lg shadow-md hidden">
        <p>
         macOS (formerly OS X) is the proprietary operating system developed by Apple Inc. for its Macintosh line of computers.
        </p>
