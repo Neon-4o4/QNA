@@ -38,6 +38,9 @@ def beautify_html(filepath):
     sidebar = soup.find('aside', {'id': 'sidebar'})
     if sidebar:
         sidebar['class'] = 'bg-slate-900 text-white w-64 min-h-screen p-4 fixed md:relative transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out z-30 flex-shrink-0'
+        nav = sidebar.find('nav')
+        if nav:
+            nav['class'] = 'sidebar'
 
         # Update headings
         list_items = sidebar.find_all('li')
@@ -52,8 +55,16 @@ def beautify_html(filepath):
             a['class'] = [c.replace('hover:bg-gray-700', 'hover:bg-slate-700') for c in a.get('class', [])]
 
 
-    # Update header
+    # Update header and main content wrapper
     header = soup.find('header')
+    if header and header.parent.name != 'div' and not header.parent.has_attr('class'):
+        wrapper = soup.new_tag('div')
+        wrapper['class'] = 'flex flex-col flex-1 h-screen overflow-y-auto'
+        header.wrap(wrapper)
+        main = soup.find('main')
+        if main:
+            wrapper.append(main)
+
     if header:
         header['class'] = 'bg-white shadow-sm p-4 flex justify-between items-center border-b border-slate-200 sticky top-0'
         h1 = header.find('h1')

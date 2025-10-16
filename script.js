@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const questionHeaders = document.querySelectorAll('article h4');
     questionHeaders.forEach(header => {
         const article = header.parentElement;
-        const answers = article.querySelectorAll('p, ul, ol, table, pre');
+        const answer = article.querySelector('div');
 
         // Add icon
         const icon = document.createElement('span');
@@ -29,15 +29,20 @@ document.addEventListener('DOMContentLoaded', () => {
         icon.textContent = '+';
         header.appendChild(icon);
 
-        answers.forEach(answer => {
-            answer.classList.add('hidden');
-        });
+        if (answer) {
+            answer.style.display = 'none';
+        }
 
         header.addEventListener('click', () => {
-            answers.forEach(answer => {
-                answer.classList.toggle('hidden');
-            });
-            icon.textContent = icon.textContent === '+' ? '-' : '+';
+            if (answer) {
+                if (answer.style.display === 'none') {
+                    answer.style.display = 'block';
+                    icon.textContent = '-';
+                } else {
+                    answer.style.display = 'none';
+                    icon.textContent = '+';
+                }
+            }
         });
     });
 });

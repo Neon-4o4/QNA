@@ -1,20 +1,23 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh; /* Full viewport height */
+  width: 250px;  /* Adjust width as needed */
+  overflow-y: auto; /* Adds a scrollbar if content is too long */
+  background-color: #f8f9fa; /* A light background color */
+  padding: 20px;
+  border-right: 1px solid #dee2e6; /* Optional: adds a border */
+}
+
 body {
-    display: flex;
+  margin-left: 290px; /* Adjust to be a bit wider than your sidebar */
+  padding: 20px;
 }
 
 nav a.active {
     background-color: #4a5568;
     color: #ffffff;
-}
-
-article p, article ul, article ol, article table, article pre {
-    transition: max-height 0.2s ease-out;
-    overflow: hidden;
-    max-height: 500px; /* Adjust as needed */
-}
-
-article .hidden {
-    max-height: 0;
 }
 
 article h4 {
