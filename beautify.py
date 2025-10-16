@@ -32,12 +32,12 @@ def beautify_html(filepath):
     # Update body
     body = soup.find('body')
     if body:
-        body['class'] = 'bg-slate-50 font-sans flex min-h-screen text-slate-900'
+        body['class'] = 'bg-slate-50 font-sans flex h-screen text-slate-900'
 
     # Update sidebar
     sidebar = soup.find('aside', {'id': 'sidebar'})
     if sidebar:
-        sidebar['class'] = 'bg-slate-900 text-white w-64 min-h-screen p-4 fixed md:relative transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out z-50'
+        sidebar['class'] = 'bg-slate-900 text-white w-64 min-h-screen p-4 fixed md:relative transform -translate-x-full md:translate-x-0 transition-transform duration-200 ease-in-out z-30 flex-shrink-0'
 
         # Update headings
         list_items = sidebar.find_all('li')
@@ -55,7 +55,7 @@ def beautify_html(filepath):
     # Update header
     header = soup.find('header')
     if header:
-        header['class'] = 'bg-white shadow-sm p-4 flex justify-between items-center border-b border-slate-200'
+        header['class'] = 'bg-white shadow-sm p-4 flex justify-between items-center border-b border-slate-200 sticky top-0'
         h1 = header.find('h1')
         if h1:
             h1['class'] = 'text-base md:text-xl font-semibold'
@@ -71,46 +71,38 @@ def beautify_html(filepath):
     section = soup.find('section')
     if section:
         h3 = section.find('h3')
-        if h3 and 'text-2xl' not in h3.get('class', []):
+        if h3:
             h3['class'] = "text-2xl font-bold mb-8 text-center"
             h3.string = h3.string.split('. ')[-1]
 
         articles = section.find_all('article')
         for article in articles:
-            if 'bg-white' not in article.get('class', []):
-                article['class'] = 'bg-white p-4 rounded-lg shadow-md mb-4'
+            article['class'] = 'mb-4'
 
-                h4 = article.find('h4')
-                if h4:
-                    h4['class'] = 'text-lg font-bold mb-4'
+            h4 = article.find('h4')
+            if h4:
+                h4['class'] = 'bg-slate-200 p-4 rounded-t-lg font-bold'
 
-                if not article.find('div', class_='text-gray-700'):
-                    content_children = [child for child in article.children if child != h4 and child.name is not None]
+            div = article.find('div', class_='text-gray-700')
+            if div:
+                div['class'] = 'bg-white p-4 rounded-b-lg shadow-md'
 
-                    div = soup.new_tag('div')
-                    div['class'] = 'text-gray-700'
-
-                    for child in content_children:
-                        div.append(child.extract())
-
-                    article.append(div)
-
-                div = article.find('div', class_='text-gray-700')
-                if div:
-                    for h5 in div.find_all('h5'):
-                        h5['class'] = 'font-semibold mt-4'
-                    for ol in div.find_all('ol'):
-                        ol['class'] = 'list-decimal list-inside'
-                    for ul in div.find_all('ul'):
-                        ul['class'] = 'list-disc list-inside ml-4'
-                    for pre in div.find_all('pre'):
-                        pre['class'] = 'bg-gray-200 p-4 rounded-md'
-                    for table in div.find_all('table'):
-                        table['class'] = 'border-collapse border border-slate-400'
-                        for th in table.find_all('th'):
-                            th['class'] = 'border border-slate-300 p-2'
-                        for td in table.find_all('td'):
-                            td['class'] = 'border border-slate-300 p-2'
+            # Apply styles to elements within the (now existing) div
+            if div:
+                for h5 in div.find_all('h5'):
+                    h5['class'] = 'font-semibold mt-4'
+                for ol in div.find_all('ol'):
+                    ol['class'] = 'list-decimal list-inside'
+                for ul in div.find_all('ul'):
+                    ul['class'] = 'list-disc list-inside ml-4'
+                for pre in div.find_all('pre'):
+                    pre['class'] = 'bg-gray-200 p-4 rounded-md'
+                for table in div.find_all('table'):
+                    table['class'] = 'border-collapse border border-slate-500'
+                    for th in table.find_all('th'):
+                        th['class'] = 'border border-slate-400 p-2'
+                    for td in table.find_all('td'):
+                        td['class'] = 'border border-slate-400 p-2'
 
     with open(filepath, 'w') as f:
         f.write(str(soup.prettify()))
